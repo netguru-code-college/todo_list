@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/home', to: 'home#show'
+
   root 'lists#index'
 
   resources :lists
