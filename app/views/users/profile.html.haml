@@ -1,8 +1,8 @@
 %p#notice= notice
 
 %p= @user.email
-%p= @user.first_name
-%p= @user.last_name
+%p= @user.full_name
+%p= @user.creation_date
 
 = link_to 'Edit', edit_user_path(@user)
 |
