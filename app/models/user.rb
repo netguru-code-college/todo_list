@@ -4,6 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # TODO add database relations
-  # TODO add model validations
+  has_and_belongs_to_many :lists
 end
