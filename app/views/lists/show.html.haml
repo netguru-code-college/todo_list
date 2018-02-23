@@ -1,5 +1,12 @@
+= render 'scripts'
+
 %p#notice= notice
 %h1= @list.name
+
+#map{ style: 'width: auto; height: 400px;' }
+
+= render 'map'
+
 = link_to 'Edit', edit_list_path(@list)
 |
 = link_to 'Back', lists_path
