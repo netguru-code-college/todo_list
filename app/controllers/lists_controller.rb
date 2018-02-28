@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: %i[show edit update destroy]
 
   # GET /lists
   def index
@@ -46,13 +46,14 @@ class ListsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_list
-      @list = List.find(params[:id]).decorate
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def list_params
-      params.require(:list).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_list
+    @list = List.find(params[:id]).decorate
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def list_params
+    params.require(:list).permit(:name)
+  end
 end
