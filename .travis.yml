@@ -1,3 +1,12 @@
 language: ruby
 rvm:
- - 2.4
+  - 2.4
+
+services:
+  - postgresql
+
+before_script:
+  - psql -c 'create database todo_list_test;' -U postgres
+
+script:
+  - bundle exec rubocop
